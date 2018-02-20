@@ -1,0 +1,31 @@
+@import '../../../css/variables/config'; ;
+@import '../../../css/mixins/media-queries';
+@import '../../../css/mixins/rems';
+
+.down-arrow {
+  display: none;
+
+  @include mq($bp1025) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: rem(20);
+    left: 0;
+
+    a {
+      &:hover {
+        svg {
+          transition: all $transition-duration-default $transition-easing-default;
+          transform: translateY(10px);
+        }
+      }
+
+      svg {
+        transition: all $transition-duration-default $transition-easing-default;
+        transform: translateY(0);
+      }
+    }
+  }
+}

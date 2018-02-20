@@ -1,0 +1,108 @@
+.recent-work {
+  h2 {
+    width: 100%;
+    color: $color-charcoal;
+    font-weight: 900;
+    text-transform: uppercase;
+    @include interpolate(font-size, 14px, 18px);
+    @include margin(rem(42) null rem(10));
+
+    @include mq($bp768) {
+      @include margin(rem(50) null null);
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq($bp768) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    > li {
+      @include margin(null null rem(40) 0);
+      background-color: $color-black;
+      // width: percentage(3/10);
+
+      @include mq($bp768) {
+        @include margin(null rem(40) rem(15) null);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @include mq($bp960) {
+        @include margin(null 0 null null);
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+
+        // &:hover {
+        //   .thenorthface {
+        //     .vm-white {
+        //       fill: #e72b1e;
+        //     }
+        //   }
+
+        //   #path-nyu {
+        //     fill: rgb(87, 6, 140);
+        //   }
+        // }
+      }
+
+      .thenorthface {
+        width: 100px;
+        height: auto;
+
+        @include mq($bp768) {
+          width: 100px;
+          height: 60px;
+        }
+      }
+
+      .logo-nyusps-hsa {
+        width: 300px;
+        height: auto;
+
+        @include mq($bp768) {
+          width: 250px;
+          height: 60px;
+        }
+      }
+
+      #path-high-school-academy,
+      #path-nyu,
+      #path-pipe,
+      #path-school-of-professional-studies {
+        fill: $color-white;
+      }
+
+      .logo-smucox {
+        width: 300px;
+        height: auto;
+
+        @include mq($bp768) {
+          width: 250px;
+          height: 60px;
+        }
+      }
+
+      .vm-black {
+        fill: $color-black;
+      }
+      .vm-white {
+        fill: $color-white;
+      }
+    }
+  }
+}

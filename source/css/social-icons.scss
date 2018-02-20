@@ -1,0 +1,27 @@
+.social-icons {
+  @include mq($bp1025) {
+    height: 30vh;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    > li {
+      @include margin(null rem(10) null null);
+
+      a {
+        &:hover {
+          svg {
+            #bg {
+              transition: all $transition-duration-default $transition-easing-default;
+              fill: $color-milanored;
+            }
+          }
+        }
+      }
+    }
+  }
+}

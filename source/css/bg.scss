@@ -1,0 +1,15 @@
+.bg {
+  background-image: url(../images/vanss_bg2_1280x1000.jpg);
+  @include background-cover;
+  @include aspect-ratio(percentage(9/16));
+  background-position: center 0;
+  background-color: $color-black;
+
+  &.bg-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+  }
+}
