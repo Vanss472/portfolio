@@ -1,0 +1,19 @@
+{
+	"name": "host_build",
+	"version": "1.0.0",
+	"description": "Host a quick reactJS prototype using HTML, CSS, JS",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"keywords": [
+		"express",
+		"frontend"
+	],
+	"author": "Vanessa Martinez",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.16.2",
+		"open": "0.0.5"
+	}
+}
