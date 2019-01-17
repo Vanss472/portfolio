@@ -1,5 +1,5 @@
 .bg {
-  background-image: url(/images/vanss_bg2_1280x1000.jpg);
+  background-image: url(/vanss_bg2_1280x1000.jpg);
   @include background-cover;
   @include aspect-ratio(percentage(9/16));
   background-position: center 0;
