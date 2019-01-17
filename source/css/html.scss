@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700,900');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: $color-black;
+  color: $color-white-smoke;
+  @include interpolate(font-size, 14px, 20px);
+  font-family: $font-roboto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.grid-container {
+  @include max-width;
+  @include padding(null percentage(1/12));
+}
+
+.component {
+  position: relative;
+}
+
+@include mq($bp580max) {
+  .m-enabled {
+    display: flex;
+    flex-direction: column;
+
+    .bg {
+      order: 2;
+      background-image: url(../images/vanss_bg_mobile_1280x853.jpg);
+
+      &.bg-position {
+        position: relative;
+        top: inherit;
+        left: inherit;
+      }
+    }
+
+    .full-name {
+      order: 0;
+    }
+
+    .word-rotation {
+      order: 1;
+    }
+
+    .skills {
+      order: 3;
+    }
+
+    .social-icons {
+      order: 4;
+    }
+
+    .recent-work {
+      order: 5;
+    }
+  }
+}

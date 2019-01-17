@@ -1,0 +1,31 @@
+@import '../../../css/variables/config';
+@import '../../../css/mixins/font-sizes';
+@import '../../../css/mixins/margin-padding';
+@import '../../../css/mixins/media-queries';
+@import '../../../css/mixins/rems';
+
+.text-loop {
+  h2 {
+    position: relative;
+    width: 100%;
+    color: $color-charcoal;
+    font-weight: 300;
+    @include interpolate(font-size, 21px, 36px);
+    @include margin(rem(10) null rem(24));
+
+    @include mq($bp768) {
+      width: percentage(5/10);
+      @include margin(null null rem(48));
+    }
+
+    span {
+      display: inline-block;
+      color: $color-milanored;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: capitalize;
+      // border-bottom: 1px solid $color-shadylady;
+      margin-left: rem(14);
+    }
+  }
+}
