@@ -5,10 +5,10 @@
     font-weight: 900;
     text-transform: uppercase;
     @include interpolate(font-size, 14px, 18px);
-    @include margin(rem(42) null rem(10));
+    @include margin(rem(42) null rem(40));
 
     @include mq($bp768) {
-      @include margin(rem(50) null null);
+      @include margin(rem(50) null rem(50));
     }
   }
 
