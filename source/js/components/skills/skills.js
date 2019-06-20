@@ -1,5 +1,5 @@
 // skills
-import $ from 'jquery';
+// import $ from 'jquery';
 import './skills.scss';
 
 console.log('mySkills init');
@@ -11,19 +11,22 @@ mySkills.addEventListener('click', () => {
   for (var skillsButtons of skillsButton) if (skillsButtons.classList.contains('active')) {
     //remove class
     skillsButtons.classList.remove('active');
-  }else {
+  }
+  else {
     // add class
     skillsButtons.classList.add('active');
   }
 });
 
-const body = document.getElementsByTagName('body')[0]
-body.addEventListener('keydown', (ev) => {
-  if(ev.which == 83) {
+// CTRL+S COMBO WAS PRESSED
+const body = document.getElementsByTagName('body')[0];
+body.addEventListener('keydown', (event) => {
+  if (event.keyCode == 83) {
     for (var skillsButtons of skillsButton) if (skillsButtons.classList.contains('active')) {
       //remove class
       skillsButtons.classList.remove('active');
-    }else {
+    }
+    else {
       // add class
       skillsButtons.classList.add('active');
     }

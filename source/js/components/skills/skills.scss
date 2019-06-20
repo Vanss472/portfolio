@@ -76,6 +76,7 @@
 
         &.skill-one-quarter {
           &.active,
+          &:focus,
           &:hover {
             &::before {
               content: '';
@@ -86,6 +87,7 @@
 
         &.skill-half {
           &.active,
+          &:focus,
           &:hover {
             &::before {
               content: '';
@@ -96,6 +98,7 @@
 
         &.skill-three-quarters {
           &.active,
+          &:focus,
           &:hover {
             &::before {
               content: '';
@@ -106,6 +109,7 @@
 
         &.skill-full {
           &.active,
+          &:focus,
           &:hover {
             &::before {
               content: '';
