@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
@@ -34,6 +35,12 @@ module.exports = {
         comments: false, // remove all comments
       },
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(paths.SRC, 'images'),
+        to: path.join(paths.DIST, 'images')
+      }
+    ]),
   ],
   // webpack is using loader
   module: {
@@ -57,6 +64,7 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
+              options: { url: false }
             },
             {
               loader: 'sass-loader',
@@ -72,20 +80,7 @@ module.exports = {
             },
           ],
         })
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-              useRelativePath: true
-            }
-          }
-        ],
-      },
+      }
     ],
   },
   // enable importing JS files
