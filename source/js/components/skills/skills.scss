@@ -42,7 +42,7 @@
     @include margin(0 rem(-5) rem(28));
 
     @include mq($bp768) {
-      width: percentage(6/10);
+      width: percentage(5/10);
       @include margin(null rem(-15) rem(57));
     }
 
