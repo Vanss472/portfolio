@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
@@ -20,6 +21,16 @@ module.exports = {
     path: paths.DIST,
     filename: 'js/app.bundle.js',
   },
+  optimization: {
+    minimizer: [new UglifyJsPlugin({
+      sourceMap: true,
+      uglifyOptions: {
+        output: {
+          comments: false, // remove all comments
+        },
+      }
+    })],
+  },
   devServer: {
     open: true
   },
@@ -28,12 +39,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(paths.SRC, 'index.html'),
     }),
-    new ExtractTextPlugin('css/style.bundle.css'),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      output: {
-        comments: false, // remove all comments
-      },
+    new MiniCssExtractPlugin({
+      filename: 'css/style.bundle.css'
     }),
     new CopyWebpackPlugin([
       {
@@ -52,35 +59,32 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react']
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         },
       },
-      // https://github.com/webpack-contrib/extract-text-webpack-plugin
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: { url: false }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [autoprefixer('last 2 versions')]
-              }
-            },
-          ],
-        })
-      }
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { url: false }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer('last 2 versions')]
+            }
+          },
+        ],
+      },
     ],
   },
   // enable importing JS files

@@ -18,13 +18,12 @@
       @include margin(null null rem(48));
     }
 
-    span {
+    .Typist {
       display: inline-block;
       color: $color-milanored;
       font-weight: 700;
       line-height: 1;
       text-transform: capitalize;
-      // border-bottom: 1px solid $color-shadylady;
       margin-left: rem(14);
     }
   }
