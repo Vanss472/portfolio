@@ -1,10 +1,9 @@
 import 'babel-polyfill';
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import Typist from 'react-typist'
 import TypistLoop from 'react-typist-loop'
 
-import './text-loop.scss';
+import './TextLoop.scss';
 
 class TextLoop extends Component {
   render() {
@@ -32,4 +31,4 @@ class TextLoop extends Component {
   }
 }
 
-export default TextLoop
+export default TextLoop;

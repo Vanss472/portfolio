@@ -16,7 +16,7 @@ const paths = {
 // Webpack configuration
 module.exports = {
   devtool: 'inline-source-map',
-  entry: [path.join(paths.JS, 'app.js')],
+  entry: [path.join(paths.JS, 'index.js')],
   output: {
     path: paths.DIST,
     filename: 'js/app.bundle.js',

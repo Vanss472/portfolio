@@ -1,6 +1,6 @@
 // ScrollTo
 require('smoothscroll-polyfill').polyfill();
-import './scroll-to.scss';
+import './ScrollTo.scss';
 
 console.log('scrollTo init');
 

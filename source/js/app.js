@@ -1,13 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component, Fragment } from 'react';
 
-import TextLoop from './components/text-loop/textLoop'
-import './components/scroll-to/scrollTo'
-import './components/skills/skills'
+import BgImage from './components/bg-image/BgImage';
+// import PageTitle from './components/page-title/PageTitle';
+// import TextLoop from './components/text-loop/TextLoop';
+// import Skills from './components/skills/Skills';
+// import SocialIcons from './components/social-icons/SocialIcons';
+// import ScrollTo from './components/scroll-to/ScrollTo';
+// import RecentWork from './components/recent-work/RecentWork';
 
-import '../css/styles.scss'
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <BgImage bgImgPath="../images/vanss_bg2_1280x1000.jpg" />
+        {/* <PageTitle />
+        <TextLoop />
+        <Skills />
+        <SocialIcons />
+        <ScrollTo />
+        <RecentWork /> */}
+      </Fragment>
+    )
+  }
+}
 
-ReactDOM.render(
-  <TextLoop />,
-  document.getElementById('textLoop')
-);
+export default App;

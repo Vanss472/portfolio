@@ -1,6 +1,6 @@
 // skills
 // import $ from 'jquery';
-import './skills.scss';
+import './Skills.scss';
 
 console.log('mySkills init');
 
