@@ -1,0 +1,31 @@
+@import '../../../css/variables/config';
+@import '../../../css/mixins/margin-padding';
+@import '../../../css/mixins/media-queries';
+@import '../../../css/mixins/rems';
+
+.social-icons {
+  @include mq($bp1025) {
+    height: 30vh;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    > li {
+      @include margin(null rem(10) null null);
+      flex-basis: rem(34);
+
+      a {
+        display: block;
+
+        svg {
+          width: 100%;
+          height: 34px;
+        }
+      }
+    }
+  }
+}

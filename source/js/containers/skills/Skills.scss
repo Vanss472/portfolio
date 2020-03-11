@@ -27,6 +27,7 @@
         display: inline-block;
         text-transform: lowercase;
         @include interpolate(font-size, 14px, 14px);
+        @include margin(null null null rem(8));
       }
     }
   }
@@ -61,11 +62,11 @@
         font-weight: 300;
         width: 100%;
         @include padding(rem(13) null rem(11));
-        transition: .3s;
+        transition: 0.3s;
 
         &::before {
           content: '';
-          transition: .3s;
+          transition: 0.3s;
           position: absolute;
           left: 0;
           bottom: 0;
@@ -127,7 +128,13 @@
             display: block;
             height: 6px;
             width: 100%;
-            background-image: repeating-linear-gradient(-45deg, $color-charcoal, $color-charcoal 2px, transparent 0, transparent 6px);
+            background-image: repeating-linear-gradient(
+              -45deg,
+              $color-charcoal,
+              $color-charcoal 2px,
+              transparent 0,
+              transparent 6px
+            );
             backface-visibility: hidden;
             position: absolute;
             bottom: 0;
