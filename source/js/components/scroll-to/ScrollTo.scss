@@ -1,4 +1,4 @@
-@import '../../../css/variables/config'; ;
+@import '../../../css/variables/config';
 @import '../../../css/mixins/media-queries';
 @import '../../../css/mixins/rems';
 
@@ -16,12 +16,15 @@
     a {
       &:hover {
         svg {
-          transition: all $transition-duration-default $transition-easing-default;
+          transition: all $transition-duration-default
+            $transition-easing-default;
           transform: translateY(10px);
         }
       }
 
       svg {
+        width: 55px;
+        height: 27px;
         transition: all $transition-duration-default $transition-easing-default;
         transform: translateY(0);
       }

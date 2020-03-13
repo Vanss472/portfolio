@@ -1,0 +1,118 @@
+@import '../../../css/variables/config';
+@import '../../../css/mixins/font-sizes';
+@import '../../../css/mixins/margin-padding';
+@import '../../../css/mixins/rems';
+@import '../../../css/mixins/media-queries';
+
+.recent-work {
+  h2 {
+    width: 100%;
+    color: $color-charcoal;
+    font-weight: 900;
+    text-transform: uppercase;
+    @include interpolate(font-size, 14px, 18px);
+    @include margin(rem(42) null rem(40));
+
+    @include mq($bp768) {
+      @include margin(rem(50) null rem(50));
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include mq($bp768) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    > li {
+      @include margin(null null rem(40) 0);
+      background-color: $color-black;
+
+      @include mq($bp768) {
+        width: percentage(5/10);
+        @include margin(null null rem(50) null);
+        text-align: center;
+      }
+
+      @include mq($bp960) {
+        @include margin(null 0 null null);
+        width: percentage(3/10);
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+      }
+
+      .thenorthface {
+        width: 200px;
+        height: 60px;
+      }
+
+      .logo-nyusps-hsa {
+        width: 250px;
+        height: 60px;
+      }
+
+      #path-high-school-academy,
+      #path-nyu,
+      #path-pipe,
+      #path-school-of-professional-studies {
+        fill: $color-white;
+      }
+
+      .logo-smucox {
+        width: 250px;
+        height: 60px;
+      }
+
+      .vm-black {
+        fill: $color-black;
+      }
+      .vm-white {
+        fill: $color-white;
+      }
+
+      .logo-make-a-wish {
+        width: 200px;
+        height: 50px;
+      }
+
+      .logo-yale-alumni {
+        width: 200px;
+        height: 44px;
+      }
+
+      .logo-nccu {
+        width: 200px;
+        height: 34px;
+      }
+
+      .sju-logo {
+        width: 65px;
+        height: 78px;
+        fill: #fff;
+      }
+
+      .aig-logo {
+        width: 90px;
+        height: 45px;
+        fill: #fff;
+      }
+
+      .monroeCollege-logo {
+        width: 153px;
+        height: 60px;
+      }
+    }
+  }
+}

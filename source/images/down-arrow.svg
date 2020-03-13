@@ -1,7 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="55px" height="27px" viewBox="0 0 55 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg
+  id="downArrow"
+  width="55px"
+  height="27px"
+  viewBox="0 0 55 27"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
     <title>arrow-down</title>
-    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-613.000000, -642.000000)">
-        <polyline id="arrow-down" stroke="#979797" points="614 642.234636 640.182341 668.416977 666.599318 642"></polyline>
+    <g
+    id="Desktop"
+    stroke="none"
+    stroke-width="1"
+    fill="none"
+    fill-rule="evenodd"
+    transform="translate(-613.000000, -642.000000)"
+  >
+        <polyline
+      id="arrow-down"
+      stroke="#979797"
+      points="614 642.234636 640.182341 668.416977 666.599318 642"
+    />
     </g>
 </svg>
