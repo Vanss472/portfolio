@@ -8,7 +8,7 @@ const RecentWork = (props) => {
   const recentWork = [
     { id: 1, src: 'https://www.thenorthface.com/lucy-transition.html', icon: 'the-north-face', aria: 'Visit The North Face site' },
     { id: 2, src: 'https://www.sps.nyu.edu/high-school-academy.html', icon: 'logo-nyusps-hsa', aria: 'Visit NYU School of Professional Studies - High School Academy site' },
-    { id: 3, src: 'https://www.smu.edu/cox', icon: 'logo-smucox', aria: 'SMU Cox School of Business site' },
+    { id: 3, src: 'https://www.smu.edu/cox', icon: 'smu-cox', aria: 'SMU Cox School of Business site' },
     { id: 4, src: 'https://wish.org/impact', icon: 'logo-make-a-wish', aria: 'Make a Wish - Impact of a Wish site' },
     { id: 5, src: 'https://alumni.yale.edu/', icon: 'logo-yale-alumni', aria: 'Yale Alumni site' },
     { id: 6, src: 'https://www.nccu.edu/', icon: 'logo-nccu', aria: 'North Carolina Central University Site' },
@@ -27,12 +27,12 @@ const RecentWork = (props) => {
                {
                  (client.src) ?
                   <Link href={client.src} rel="noopener noreferrer" target="_blank" ariaLabel={client.aria}>
-                    <svg>
+                    <svg class={client.icon}>
                       <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={`${iconPath}${client.icon}.svg#${client.icon}`}></use>
                     </svg>
                   </Link>
                   :
-                  <svg>
+                  <svg class={client.icon}>
                     <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={`${iconPath}${client.icon}.svg#${client.icon}`}></use>
                   </svg>
                }

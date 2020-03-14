@@ -53,7 +53,11 @@
         text-decoration: none;
       }
 
-      .thenorthface {
+      svg {
+        fill: $color-white;
+      }
+
+      .the-north-face {
         width: 200px;
         height: 60px;
       }
@@ -63,23 +67,9 @@
         height: 60px;
       }
 
-      #path-high-school-academy,
-      #path-nyu,
-      #path-pipe,
-      #path-school-of-professional-studies {
-        fill: $color-white;
-      }
-
-      .logo-smucox {
+      .smu-cox {
         width: 250px;
         height: 60px;
-      }
-
-      .vm-black {
-        fill: $color-black;
-      }
-      .vm-white {
-        fill: $color-white;
       }
 
       .logo-make-a-wish {
