@@ -5,7 +5,6 @@ import PageTitle from '../components/page-title/PageTitle';
 import TextLoop from '../containers/text-loop/TextLoop';
 import Skills from '../containers/skills/Skills';
 import SocialIcons from '../components/social-icons/SocialIcons';
-import ScrollTo from '../components/scroll-to/ScrollTo';
 import RecentWork from '../components/recent-work/RecentWork';
 
 class App extends Component {
@@ -17,7 +16,6 @@ class App extends Component {
         <TextLoop />
         <Skills />
         <SocialIcons />
-        <ScrollTo />
         <RecentWork sectionTitle="Recent Work" />
       </Fragment>
     )

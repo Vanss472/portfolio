@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef, Fragment } from 'react';
 import Link from '../link/Link';
+import ScrollTo from '../scroll-to/ScrollTo';
 
 import './RecentWork.scss';
 const iconPath = '/source/images/';
@@ -15,33 +16,49 @@ const RecentWork = (props) => {
     { id: 7, src: 'https://www.sju.edu/', icon: 'sju-logo', aria: 'Saint Joseph University' },
     { id: 8, src: null, icon: 'monroeCollege-logo', aria: null },
     { id: 9, src: 'https://www-606.aig.com/', icon: 'aig-logo', aria: 'AIG - Private Client Group' }
-  ]
+  ];
+
+  let targetRef = useRef(null);
+
+  const scrollToTargetHandler = (e) => {
+    console.log('init');
+    e.preventDefault();
+    window.scroll({
+      'behavior': 'smooth',
+      'left': 0,
+      'top': targetRef.current.offsetTop
+    });
+  };
+
   return (
-    <section id="recentwork" className="component recent-work">
-      <div className="grid-container">
-        <h2>{props.sectionTitle}</h2>
-        <ul>
-          {
-            recentWork.map((client) => (
-              <li key={client.id}>
-               {
-                 (client.src) ?
-                  <Link href={client.src} rel="noopener noreferrer" target="_blank" ariaLabel={client.aria}>
-                    <svg class={client.icon}>
+    <Fragment>
+      <ScrollTo scrollToTarget={scrollToTargetHandler} />
+      <section ref={targetRef} id="recentwork" className="component recent-work">
+        <div className="grid-container">
+          <h2>{props.sectionTitle}</h2>
+          <ul>
+            {
+              recentWork.map((client) => (
+                <li key={client.id}>
+                {
+                  (client.src) ?
+                    <Link href={client.src} rel="noopener noreferrer" target="_blank" ariaLabel={client.aria}>
+                      <svg className={client.icon}>
+                        <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={`${iconPath}${client.icon}.svg#${client.icon}`}></use>
+                      </svg>
+                    </Link>
+                    :
+                    <svg className={client.icon}>
                       <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={`${iconPath}${client.icon}.svg#${client.icon}`}></use>
                     </svg>
-                  </Link>
-                  :
-                  <svg class={client.icon}>
-                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={`${iconPath}${client.icon}.svg#${client.icon}`}></use>
-                  </svg>
-               }
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </section>
+                }
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+    </Fragment>
   )
 }
 
