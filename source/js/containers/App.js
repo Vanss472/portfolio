@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <BgImage bgImgPath="../images/vanss_bg2_1280x1000.jpg" />
+        <BgImage bgImgPath="./images/vanss_bg2_1280x1000.jpg" />
         <PageTitle lineOne="Hello, my name is" lineTwo="Vanessa Martínez" />
         <TextLoop />
         <Skills />

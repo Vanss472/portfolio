@@ -3,7 +3,7 @@ import Link from '../link/Link';
 import ScrollTo from '../scroll-to/ScrollTo';
 
 import './RecentWork.scss';
-const iconPath = '/source/images/';
+const iconPath = './images/';
 
 const RecentWork = (props) => {
   const recentWork = [

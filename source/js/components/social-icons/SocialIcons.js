@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '../link/Link';
 
 import './SocialIcons.scss';
-const iconPath = '/source/images/';
+const iconPath = './images/';
 
 const SocialIcons = () => {
   const socials = [

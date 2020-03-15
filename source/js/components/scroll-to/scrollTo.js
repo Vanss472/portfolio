@@ -7,7 +7,7 @@ import './ScrollTo.scss';
 // kick off the polyfill!
 smoothscroll.polyfill();
 
-const iconPath = '/source/images/';
+const iconPath = './images/';
 const iconName = 'down-arrow';
 const iconId = 'downArrow';
 
