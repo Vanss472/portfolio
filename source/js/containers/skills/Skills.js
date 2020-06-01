@@ -19,7 +19,8 @@ class Skills extends Component {
       { type: 'Design System', level: 'skill-full' },
       { type: 'Responsive Design', level: 'skill-full' },
       { type: 'GSAP', level: 'skill-full' },
-      { type: 'UI/UX', level: 'skill-full' }
+      { type: 'UI/UX', level: 'skill-full' },
+      { type: 'TypeScript', level: 'skill-one-quarter' }
     ];
 
     return (
