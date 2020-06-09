@@ -14,7 +14,7 @@ const RecentWork = (props) => {
     { id: 5, src: 'https://alumni.yale.edu/', icon: 'logo-yale-alumni', aria: 'Yale Alumni site' },
     { id: 6, src: 'https://www.nccu.edu/', icon: 'logo-nccu', aria: 'North Carolina Central University Site' },
     { id: 7, src: 'https://www.sju.edu/', icon: 'sju-logo', aria: 'Saint Joseph University' },
-    { id: 8, src: null, icon: 'monroeCollege-logo', aria: null },
+    { id: 8, src: 'https://www.monroecollege.edu/', icon: 'monroeCollege-logo', aria: 'Monroe College Site' },
     { id: 9, src: 'https://www-606.aig.com/', icon: 'aig-logo', aria: 'AIG - Private Client Group' }
   ];
 
