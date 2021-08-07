@@ -4,7 +4,7 @@
   "description": "Vanessa's Portfolio",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --open",
+    "dev": "webpack server --open",
     "build": "rm -rf ./build && webpack --mode=development"
   },
   "keywords": [

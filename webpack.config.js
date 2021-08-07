@@ -15,6 +15,7 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
+  mode: 'development',
   devtool: 'inline-source-map',
   entry: [path.join(paths.JS, 'index.js')],
   output: {
@@ -31,6 +32,10 @@ module.exports = {
       }
     })],
   },
+  stats: {
+    children: true,
+    errorDetails: true,
+  },
   devServer: {
     open: true
   },
@@ -42,12 +47,14 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/style.bundle.css'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.join(paths.SRC, 'images'),
-        to: path.join(paths.DIST, 'images')
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.join(paths.SRC, 'images'),
+          to: path.join(paths.DIST, 'images')
+        }
+      ]
+    }),
   ],
   // webpack is using loader
   module: {
@@ -80,7 +87,11 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [autoprefixer('last 2 versions')]
+              postcssOptions: {
+                plugins: [
+                  "autoprefixer",
+                ]
+              }
             }
           },
         ],
