@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack server --open",
-    "build": "rm -rf ./build && webpack --mode=development"
+    "build": "rm -rf ./build && webpack --mode=production"
   },
   "keywords": [
     "webpack",
