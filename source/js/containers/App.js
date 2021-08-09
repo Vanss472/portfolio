@@ -7,19 +7,17 @@ import Skills from '../containers/skills/Skills';
 import SocialIcons from '../components/social-icons/SocialIcons';
 import RecentWork from '../components/recent-work/RecentWork';
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <BgImage bgImgPath="./images/vanss_bg2_1280x1000.jpg" />
-        <PageTitle lineOne="Hello, my name is" lineTwo="Vanessa Martínez" />
-        <TextLoop />
-        <Skills />
-        <SocialIcons />
-        <RecentWork sectionTitle="Recent Work" />
-      </Fragment>
-    )
-  }
+const App = () => {
+  return (
+    <Fragment>
+      <BgImage bgImgPath="./images/vanss_bg2_1280x1000.jpg" />
+      <PageTitle lineOne="Hello, my name is" lineTwo="Vanessa Martínez" />
+      <TextLoop />
+      <Skills />
+      <SocialIcons />
+      <RecentWork sectionTitle="Recent Work" />
+    </Fragment>
+  )
 }
 
-export default App;
+export default App

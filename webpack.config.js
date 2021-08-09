@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
 // Constant with our paths
@@ -71,6 +70,24 @@ module.exports = {
         },
       },
       {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'react-svg-loader',
+            options: {
+              jsx: true // true outputs JSX tags
+            }
+          }
+        ],
+      },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i, // Images
+        type: 'asset/resource',
+      },
+      {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -95,7 +112,7 @@ module.exports = {
             }
           },
         ],
-      },
+      }
     ],
   },
   // enable importing JS files

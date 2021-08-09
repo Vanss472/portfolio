@@ -1,12 +1,12 @@
 import 'babel-polyfill';
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Typist from 'react-typist'
-import TypistLoop from 'react-typist-loop'
 
 import './TextLoop.scss';
 
 const TextLoop = () => {
-  const outsideWork = [
+  const [index, setIndex] = useState(0)
+  const outsideWorks = [
     'Front End Developer',
     'Freelancer',
     'Photographer',
@@ -19,15 +19,16 @@ const TextLoop = () => {
     'Coder',
     'Dog Lover'
   ];
+  const outsideWork = outsideWorks[index % outsideWorks.length]
 
   return (
     <section className="component text-loop">
       <div className="grid-container">
         <div id="textLoop">
           <h2> I am a
-          <TypistLoop interval={3000}>
-            {outsideWork.map(text => <Typist key={text} startDelay={1000} cursor={{show: false}}>{text}</Typist>)}
-          </TypistLoop>
+          <Typist key={index} avgTypingDelay={150} onTypingDone={() => setIndex((i) => i + 1)}>
+            {outsideWork}
+          </Typist>
           </h2>
         </div>
       </div>
